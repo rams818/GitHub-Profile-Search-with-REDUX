@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
 import './App.css';
+import GithubProfileSearch from './components/GithubProfileSearch';
+import { store } from './redux/store';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav className="navbar navbar-info bg-danger text-white">
+        <div className="container-fluid justify-content-center">
+          <span className="navbar-brand mb-0 h1 font-bold">React Github Profile search with REDUX</span>
+        </div>
+      </nav>
+
+      <Provider store={store}>
+        <GithubProfileSearch />
+      </Provider>
     </div>
   );
 }
